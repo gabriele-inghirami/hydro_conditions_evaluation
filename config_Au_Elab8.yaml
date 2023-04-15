@@ -1,0 +1,39 @@
+Version: 1.8 # minimal SMASH version to use with this config file
+
+Logging:
+  default: INFO
+
+General:
+  Modus: Collider
+  Time_Step_Mode: Fixed
+  Delta_Time: 0.1
+  End_Time: 40.01
+  Randomseed: -1
+  Nevents: 3
+
+Lattice:
+  Origin: [-37.5, -37.5, -37.5]
+  Sizes: [75.0, 75.0, 75.0]
+  Cell_Number: [75, 75, 75]
+  Periodic: False
+  Potentials_Affect_Thresholds: False
+
+Output:
+  Output_Interval: 0.5
+  Thermodynamics:
+    Only_Participants: True
+    Format: [Lattice_Binary]
+    Type: hadron
+    Quantities: [rho_eckart, tmn_landau, landau_velocity, j_QBS]
+
+Modi:
+  Collider:
+    Projectile:
+      Particles: {2212: 79, 2112: 118}
+    Target:
+      Particles: {2212: 79, 2112: 118}
+    E_Kin: 8.0
+    Fermi_Motion: frozen
+    Impact:
+      Sample: quadratic
+      Range: [0,3.3]
